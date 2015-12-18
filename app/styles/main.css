@@ -1,0 +1,20 @@
+
+
+.ir-orange-text {
+    color: #EF501F;
+}
+
+.ir-orange-bg {
+    background-color: #EF501F;
+}
+
+nav {
+    background-color: #EF501F;
+}
+
+.card-image .card-title.ir-orange-text{
+
+    text-shadow: 0px 2px 1px rgba(0,0,0,0.4),
+                 0px 4px 5px rgba(0,0,0,0.1),
+                 0px 6px 8px rgba(0,0,0,0.1);
+}
