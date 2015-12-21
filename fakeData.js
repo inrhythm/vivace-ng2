@@ -1,9 +1,10 @@
 var faker = require('faker');
 
-module.exports = function() {
+module.exports = function(num) {
   var output = [];
+  var x = num || 80;
 
-  for (var i = 0; i < 80; i++) {
+  for (var i = 0; i < x; i++) {
     output.push({
       id: i,
       firstName: faker.name.firstName(),

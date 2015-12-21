@@ -1,14 +1,12 @@
-// @AngularClass
 
-/*
- * Helper: root(), and rootDir() are defined at the bottom
- */
 var sliceArgs = Function.prototype.call.bind(Array.prototype.slice);
 var toString  = Function.prototype.call.bind(Object.prototype.toString);
 var path = require('path');
 var webpack = require('webpack');
 // Webpack Plugins
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+
+var isTest = process.env.NODE_ENV == 'test';
 
 /*
  * Config
@@ -50,7 +48,7 @@ module.exports = {
             2375  // 2375 -> Duplicate string index signature
           ]
         },
-        exclude: [ /\.spec\.ts$/, /\.e2e\.ts$/, /node_modules/ ]
+        exclude: [/node_modules/]
       },
 
       // Support for *.json files.
@@ -62,8 +60,9 @@ module.exports = {
       // support for .html as raw text
       { test: /\.html$/,  loader: 'raw-loader' },
     ],
-    noParse: [ /zone\.js\/dist\/.+/, /angular2\/bundles\/.+/ ]
+    noParse: [ /zone\.js\/dist\/.+/, /angular2\/bundles\/.+/]
   },
+
 
   plugins: [
     new CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js', minChunks: Infinity }),
